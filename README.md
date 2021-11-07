@@ -17,4 +17,4 @@ To run the app:
 streamlit run app.py
 ```
 
-After the app is loaded to your browser, simply upload a screenshot os either AC Unity or Hitman and the prediction and confidence will be displayed.
+After the app is loaded to your browser, simply upload a screenshot of either AC Unity or Hitman and the prediction and confidence will be displayed.
