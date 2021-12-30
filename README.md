@@ -1,4 +1,4 @@
-# Streamlit Game Classifier
+# Streamlit Game Classifier [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/pradholla/game-classifier-streamlit)
 Streamlit is a Python framework which is used to build Data Science and Machine Learning web apps purely in Python.
 
 This is my first project in Streamlit. This is a basic image classifier application. The games on which the classifier is built on are Assassin's Creed Unity and Hitman. 
