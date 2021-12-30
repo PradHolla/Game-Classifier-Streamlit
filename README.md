@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ```
 To run the app:
 ```bash
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
 
 After the app is loaded to your browser, simply upload a screenshot of either AC Unity or Hitman and the prediction and confidence will be displayed.
