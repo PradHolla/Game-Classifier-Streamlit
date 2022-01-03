@@ -6,7 +6,8 @@ from PIL import Image
 from tempfile import NamedTemporaryFile
 
 
-st.title("Game Classifier")
+# st.title("Game Classifier")
+st.set_page_config(page_title="Game Classifier", layout="wide")
 st.header("Please input a screenshot of AC Unity or Hitman")
 st.text("Created by PNH")
 
