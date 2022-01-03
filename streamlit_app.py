@@ -36,19 +36,20 @@ def load_and_predict(image):
     
 
 if __name__ == "__main__":
-    uploaded_file = st.file_uploader("Upload a screenshot", type=["png", "jpg", "jpeg"])
+    uploaded_file = st.sidebar.file_uploader("Upload a screenshot", type=["png", "jpg", "jpeg"])
     temp_file = NamedTemporaryFile(delete=False)
     if uploaded_file is not None:
         temp_file.write(uploaded_file.getvalue())
-    btn = st.button("Predict")
+    btn = st.sidebar.button("Predict")
     if btn:
         if uploaded_file is None:
             st.write("No image selected")
         else:
-            image = Image.open(uploaded_file)
-            predictions, score = load_and_predict(temp_file.name)
-            st.success("Classification Complete!")
-            st.write(f"The model is {round(score, 2)}% confident that it belongs to {predictions}")
-            st.image(image, caption=f"{predictions}", use_column_width=True)
+            with st.spinner("Analyzing..."):
+                image = Image.open(uploaded_file)
+                predictions, score = load_and_predict(temp_file.name)
+                st.success("Classification Complete!")
+                st.write(f"The model is {round(score, 2)}% confident that it belongs to {predictions}")
+                st.image(image, caption=f"{predictions}", use_column_width=True)
 
 
