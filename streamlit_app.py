@@ -5,12 +5,9 @@ import numpy as np
 from PIL import Image
 from tempfile import NamedTemporaryFile
 
-
-# st.title("Game Classifier")
 st.set_page_config(page_title="Game Classifier", layout="wide")
 st.header("Please input a screenshot of AC Unity or Hitman")
-st.text("Created by PNH")
-
+st.write("Created by [PNH](https://github.com/PradHolla). Powered by [Streamlit](https://streamlit.io/).")
 
 model = None
 img_height = 180
@@ -33,7 +30,6 @@ def load_and_predict(image):
     pred = class_names[np.argmax(predictions[0])]
 
     return pred, score
-    
 
 if __name__ == "__main__":
     uploaded_file = st.sidebar.file_uploader("Upload a screenshot", type=["png", "jpg", "jpeg"])
@@ -51,5 +47,3 @@ if __name__ == "__main__":
                 st.success("Classification Complete!")
                 st.write(f"The model is {round(score, 2)}% confident that it belongs to {predictions}")
                 st.image(image, caption=f"{predictions}", use_column_width=True)
-
-
