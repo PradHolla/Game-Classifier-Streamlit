@@ -6,8 +6,9 @@ from PIL import Image
 from tempfile import NamedTemporaryFile
 
 st.set_page_config(page_title="Game Classifier", page_icon="🎮", layout="wide")
-st.header("Please input a screenshot of AC Unity or Hitman")
+st.header("Game Classifier")
 st.write("Created by [PNH](https://github.com/PradHolla). Powered by [Streamlit](https://streamlit.io/).")
+st.write("#### Please upload an image/screenshot of AC Unity or Hitman")
 
 model = None
 img_height = 180
@@ -32,12 +33,11 @@ def load_and_predict(image):
     return pred, score
 
 if __name__ == "__main__":
-    uploaded_file = st.sidebar.file_uploader("Upload a screenshot", type=["png", "jpg", "jpeg"])
+    uploaded_file = st.sidebar.file_uploader("Upload the image file", type=["png", "jpg", "jpeg"])
     temp_file = NamedTemporaryFile(delete=False)
     if uploaded_file is not None:
         temp_file.write(uploaded_file.getvalue())
-    btn = st.sidebar.button("Predict")
-    if btn:
+    if btn := st.sidebar.button("Predict"):
         if uploaded_file is None:
             st.write("No image selected")
         else:
