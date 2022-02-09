@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 from tempfile import NamedTemporaryFile
 
-st.set_page_config(page_title="Game Classifier", layout="wide")
+st.set_page_config(page_title="Game Classifier", page_icon="🎮", layout="wide")
 st.header("Please input a screenshot of AC Unity or Hitman")
 st.write("Created by [PNH](https://github.com/PradHolla). Powered by [Streamlit](https://streamlit.io/).")
 
